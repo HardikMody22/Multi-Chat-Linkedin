@@ -1,0 +1,97 @@
+{
+  "name": "skygear-chat",
+  "version": "1.3.4",
+  "description": "JS SDK for skyegar chat plugin",
+  "homepage": "https://github.com/SkygearIO/chat-SDK-JS#readme",
+  "author": "Rick Mak",
+  "files": [
+    "cloud.js",
+    "dist"
+  ],
+  "main": "dist/index.js",
+  "keywords": [
+    "skygear",
+    "chat",
+    "plugin"
+  ],
+  "scripts": {
+    "doc": "esdoc -c esdoc.json",
+    "test": "gulp",
+    "dev": "gulp --type dev dev",
+    "babel": "gulp babel",
+    "demo": "gulp browserify && cp dist/bundle.js demo/bundle.js",
+    "prepublish": "gulp prepublish",
+    "deploy": "gulp deploy",
+    "deploy-latest": "gulp deploy --latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SkygearIO/chat-SDK-JS.git"
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/SkygearIO/chat-SDK-JS/issues"
+  },
+  "devDependencies": {
+    "babel-core": "^6.11.4",
+    "babel-eslint": "^6.1.2",
+    "babel-preset-es2015": "6.9.0",
+    "babel-register": "^6.9.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.1.1",
+    "browserify-shim": "^3.8.14",
+    "chai": "^3.5.0",
+    "del": "^2.0.2",
+    "esdoc": "^0.4.8",
+    "eslint": "^3.1.1",
+    "eslint-config-xo-space": "^0.15.0",
+    "eslint-plugin-babel": "^3.3.0",
+    "gulp": "^3.9.0",
+    "gulp-awspublish": "^3.3.0",
+    "gulp-babel": "^6.1.2",
+    "gulp-cloudfront-invalidate-aws-publish": "^0.2.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-eslint": "^3.0.1",
+    "gulp-exclude-gitignore": "^1.0.0",
+    "gulp-istanbul": "^1.0.0",
+    "gulp-line-ending-corrector": "^1.0.1",
+    "gulp-mocha": "^3.0.1",
+    "gulp-plumber": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-uglify": "^2.0.1",
+    "gulp-util": "^3.0.8",
+    "isparta": "^4.0.0",
+    "nock": "^9.0.2",
+    "require-dir": "^0.3.1",
+    "sinon": "^1.17.7",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.9.0"
+  },
+  "eslintConfig": {
+    "extends": "xo-space",
+    "presets": [
+      "es2015"
+    ],
+    "env": {
+      "mocha": true
+    }
+  },
+  "peerDependencies": {
+    "skygear": "^1.3.0"
+  },
+  "dependencies": {
+    "underscore": "^1.8.3",
+    "uuid": "^3.0.1"
+  },
+  "browserify-shim": {
+    "skygear": "global:skygear"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  }
+}
